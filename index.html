@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<title>HexPicker | Easy color mixer and online hex color generator.</title>
+		<meta name="description" content="Generate HTML color codes, rgb values, hsv values http://www.hexpicker.com" />
+		
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<script src="js/picker.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1><i class="fa fa-magic"></i> <strong>Hex</strong>Picker</h1>
+		</header>
+		<div id="bodywrap">
+			<div id="hexpickr">
+				<div id="pickers">
+					<div id="shade-wrapper">
+						<div id="shade"></div>
+						<div id="crosshair"></div>
+					</div>
+					<div id="hue-wrapper">
+						<div id="hue"></div>
+						<div id="hue-slider">
+							<span class="ar-l"></span>
+							<span class="ar-r"></span>
+						</div>
+					</div>
+				</div>
+				<div id="values">
+					<input type="text" id="colorhex" maxlength="6" value="FF0000" />
+					<div id="color-info-wrap">
+						<table class="color-info">
+							<tr>
+								<th>H</th>
+								<td><input type="range" class="hsvval" data-obj="h" id="val-h" min="0" max="359" /></td>
+							</tr>
+							
+							<tr>
+								<th>S</th>
+								<td><input type="range" class="hsvval" data-obj="s" id="val-s" min="0" max="100" /></td>
+							</tr>
+							<tr>
+								<th>V</th>
+								<td><input type="range" class="hsvval" data-obj="v" id="val-v" min="0" max="100" /></td>
+							</tr>
+						</table>
+						<hr />
+						<table class="color-info">
+							<tr><th>R</th><td><input type="range" class="rgbval" data-obj="r" id="val-r" min="0" max="255" /></td></tr>
+							<tr><th>G</th><td><input type="range" class="rgbval" data-obj="g" id="val-g" min="0" max="255" /></td></tr>
+							<tr><th>B</th><td><input type="range" class="rgbval" data-obj="b" id="val-b" min="0" max="255" /></td></tr>
+						</table>
+					</div>
+				</div>
+				
+				<div id="swatches">
+					<button onclick="picker.swatch();">&plus; Swatch</button>
+					<div id="swatch-list"></div>
+				</div>
+				
+			</div>
+		</div>
+		<script>
+		window.addEventListener('load',function(e){
+			picker.init();
+		},false);
+		</script>
+	</body>
+</html>
